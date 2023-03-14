@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>      
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Bootstrap -->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+          crossorigin="anonymous"
+        />
+        <!-- CSS Page -->
+        <link rel="stylesheet" href="static/css/home.css" />
+        <title>MERFISH Viewer</title>
+        <meta name="description" content="">
+        <meta name="author" content="Alex Monell">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="static/javascript/makeimages.js"> </script>
+        <script type="text/javascript" src="static/javascript/toggle.js"> </script>
+        <script type="text/javascript" src="static/javascript/sidebar.js"> </script>
+        <script type="text/javascript" src="static/javascript/sidebarclick.js"> </script>
+        <script type="text/javascript" src="static/javascript/transcripts.js"> </script>
+        <script type="text/javascript" src="static/javascript/pseudotime.js"> </script>
+        <script type="text/javascript" src="static/javascript/zoom.js"> </script>
+        <script type="text/javascript" src="static/javascript/zoom9.js"> </script>
+        <script type="text/javascript" src="static/javascript/zoom10.js"> </script>
+        <script type="text/javascript" src="static/javascript/differential.js"> </script>
+        <script type="text/javascript" src="static/javascript/imputed.js"> </script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                line-height: 1.5;
+            }
+    
+            h1 {
+                font-size: 32px;
+                text-align: center;
+            }
+    
+            p {
+                font-size: 18px;
+                margin-bottom: 20px;
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+            footer {
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background-color: #333;
+			padding: 10px 0;
+			text-align: center;
+			color: #fff;
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		
+		footer img {
+			display: inline-block;
+			margin: 0 auto;
+			width: 33%;
+			height: auto;
+		}
+		
+		footer p {
+			margin: 10px 0 0;
+		}
+        </style>
+    </head>
+
+
+    <body>
+        <!-- Website Navbar -->
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="https://ecker.salk.edu/">
+                <img src="static/images/ecker_lab_logo.png" alt="Bootstrap" height="65" />
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+                class="collapse navbar-collapse justify-content-end"
+                id="navbarSupportedContent"
+            >
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index">Data Visualizer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">About Our Research</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+        <div class = 'column_about2' style="width: 10%; float: left; margin-top: 13%;">
+            <p> <span style="font-size: x-large; font-weight: bolder;">Contact: </span><br>tnobori@salk.edu <br>amonell@ucsd.edu <br>jecker@salk.edu</p> 
+        </div>
+        <div class = 'column_about' style="width: 70%; float: left; margin-left: 10%;">
+            <h1>Our Research</h1>
+            <p>Plant leaf intercellular space provides a nutrient-rich and heterogeneous niche for microbes that have a critical impact on plant health. However, how individual plant cells respond to heterogeneous microbial colonization remains largely elusive. Here, by time-resolved simultaneous single-cell transcriptome and epigenome profiling of plants (Arabidopsis thaliana) infected by virulent and avirulent bacterial pathogens (Pseudomonas syringae), we present cell atlases and gene regulatory logic involving transcription factors, potential cis-regulatory elements, and target genes associated with disease and immunity. </p>
+            <p>We also identify previously uncharacterized cell populations with distinct immune gene expression within major developmental cell types. Furthermore, we employ time-resolved spatial transcriptomics to reveal spatial heterogeneity of plant immune responses linked to pathogen distribution. Integration of our single-cell multiomics and spatial omics data enables spatiotemporal mapping of defense gene regulatory logic with pathogen cells. Overall, our study provides a molecularly-defined spatiotemporal map of plant-microbe interaction at the single-cell resolution. </p>
+        </div>
+        <br>
+        <footer>
+            
+            <img src="static/images/aboutus/6hrabout.png" alt="Image 1">
+            <img src="static/images/aboutus/9hrabout.png" alt="Image 2">
+            <img src="static/images/aboutus/24hrabout.png" alt="Image 3">
+            <!-- <p>Contact: <br>tnobori@salk.edu <br>amonell@ucsd.edu <br>jecker@salk.edu</p> -->
+        </footer>
+    </body>
+</html>

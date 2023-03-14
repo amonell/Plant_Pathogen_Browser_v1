@@ -1,0 +1,15 @@
+# Ignore the scanpy_files folder
+scanpy_files/
+
+# Ignore all files with the .log extension
+*.log
+
+# Ignore a specific file called secret.txt
+secret.txt
+
+# Ignore all files in a folder called "temp" regardless of the folder location
+**/temp/*
+
+# Ignore all files with a .jpg or .png extension in any folder
+**/*.jpg
+**/*.png

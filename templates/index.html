@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+    <head>      
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Bootstrap -->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+          crossorigin="anonymous"
+        />
+        <!-- CSS Page -->
+        <link rel="stylesheet" href="static/css/home.css" />
+        <title>MERFISH Viewer</title>
+        <meta name="description" content="">
+        <meta name="author" content="Alex Monell">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="static/javascript/makeimages.js"> </script>
+        <script type="text/javascript" src="static/javascript/toggle.js"> </script>
+        <script type="text/javascript" src="static/javascript/sidebar.js"> </script>
+        <script type="text/javascript" src="static/javascript/sidebarclick.js"> </script>
+        <script type="text/javascript" src="static/javascript/transcripts.js"> </script>
+        <script type="text/javascript" src="static/javascript/pseudotime.js"> </script>
+        <script type="text/javascript" src="static/javascript/zoom.js"> </script>
+        <script type="text/javascript" src="static/javascript/differential.js"> </script>
+        <script type="text/javascript" src="static/javascript/imputed.js"> </script>
+        <script type="text/javascript" src="static/javascript/motif.js"> </script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    </head>
+
+
+    <body>
+        <!-- Website Navbar -->
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="https://ecker.salk.edu/">
+                <img src="static/images/ecker_lab_logo.png" alt="Bootstrap" height="65" />
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+                class="collapse navbar-collapse justify-content-end"
+                id="navbarSupportedContent"
+            >
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Data Visualizer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="viewer">About Our Research</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+        <div class="row"> 
+            <div class="column3">
+                <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+                <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+                    <div class="clusterpress">
+                        <a href="#"><i class="material-icons">group_work</i><span class="icon-text"></span>Clusters</a></span>
+                        </a><br>
+                    </div>
+                    <div class="transcriptpress">
+                        <a href="#"><i class="material-icons">blur_on</i><span class="icon-text"></span>Transcripts</a></span>
+                        </a><br>
+                    </div>
+                    <div class="pseudotimepress">
+                        <a href="#"><i class="material-icons">call_missed</i><span class="icon-text"></span>Pseudotime</span></a><br>
+                    </div>
+                    <div class="genepress">
+                        <a href="#"><i class="material-icons">assessment</i><span class="icon-text"></span>Differential<span></a><br>
+                    </div>
+                    <div class="imputedpress">
+                        <a href="#"><i class="material-icons">compare_arrows</i><span class="icon-text"></span>Imputed<span></a><br>
+                    </div>
+                    <div class="motifpress">
+                        <a href="#"><i class="material-icons">power_input</i><span class="icon-text"></span>Motifs<span></a><br>
+                    </div>
+                    <!-- <div class="bacteriapress">
+                        <a href="#"><i class="material-icons">bug_report</i><span class="icon-text"></span>Pathogen<span></a>
+                    </div> -->
+                </div>
+            </div>
+            <!-- Header -->
+            <div class="column4">
+                <label class="header" name = "visuals">Pathogen Arabidopsis Data Visualizer</label>
+                <div class = 'mainSection' id = 'main'>   
+                     
+                    <!-- Gene Expression Start -->
+                    <div class="genePanel" id = "genePanel" style="display: none;">
+                        <div class="row genePanel"> 
+                            <!-- Checkboxrow -->
+                            <!-- Checkboxrow -->
+                            <div class="checkboxcolumn2 genePanel">
+                                <!-- Default checkbox -->
+                                <div class="row genePanel">
+                                    <label class="genePanel" style="text-align: center;">
+                                        Pick two clusters to see top differentially expressed genes:
+
+                                    </label>
+                                    <select class = 'genePanel' name="first_dropdown" id="first_dropdown">
+                                        <option value="0">Cluster 0</option> 
+                                        <option value="1">Cluster 1</option> 
+                                        <option value="2">Cluster 2</option> 
+                                        <option value="3">Cluster 3</option> 
+                                        <option value="4">Cluster 4</option> 
+                                        <option value="5">Cluster 5</option> 
+                                        <option value="6">Cluster 6</option> 
+                                        <option value="7">Cluster 7</option> 
+                                        <option value="8">Cluster 8</option> 
+                                        <option value="9">Cluster 9</option> 
+                                        <option value="10">Cluster 10</option> 
+                                        <option value="11">Cluster 11</option> 
+                                        <option value="12">Cluster 12</option> 
+                                        <option value="13">Cluster 13</option> 
+                                        <option value="14">Cluster 14</option> 
+                                        <option value="15">Cluster 15</option> 
+                                        <option value="16">Cluster 16</option> 
+                                        <option value="17">Cluster 17</option> 
+                                    </select>
+                                    <select class = 'genePanel' name="second_dropdown" id="second_dropdown">
+                                        <option value="0">Cluster 0</option> 
+                                        <option value="1">Cluster 1</option> 
+                                        <option value="2">Cluster 2</option> 
+                                        <option value="3">Cluster 3</option> 
+                                        <option value="4">Cluster 4</option> 
+                                        <option value="5">Cluster 5</option> 
+                                        <option value="6">Cluster 6</option> 
+                                        <option value="7">Cluster 7</option> 
+                                        <option value="8">Cluster 8</option> 
+                                        <option value="9">Cluster 9</option> 
+                                        <option value="10">Cluster 10</option> 
+                                        <option value="11">Cluster 11</option> 
+                                        <option value="12">Cluster 12</option> 
+                                        <option value="13">Cluster 13</option> 
+                                        <option value="14">Cluster 14</option> 
+                                        <option value="15">Cluster 15</option> 
+                                        <option value="16">Cluster 16</option> 
+                                        <option value="17">Cluster 17</option> 
+                                    </select>
+                                    <div class="genePanel">
+                                        <button type='button' id ='display_diff' style = "max-width: 80%;" onclick="display_differential();">Calculate</button>
+                                    </div>
+                                    <label class="genePanel" id="myprogressBar">
+                                         
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- End Checkboxrow -->
+                            <!-- Image Column -->
+                            <div class="column genePanel">
+                                <div class="row_images genePanel">
+                                    <div class="zoom_outer7 genePanel">
+                                        <div class="genePanel" id="zoom7">
+                                            <img src="{{ user_imageax1_diff }}" alt="User Image1 Diff"  class = "matplot3 genePanel" id = "myimg1_diff" width="350" height="350">
+                                        </div>
+                                    </div>
+                                    <script src=static/javascript/zoom7.js></script>
+                                    
+                                    <div class="zoom_outer8 genePanel">
+                                        <div class="genePanel" id="zoom8">
+                                            
+                                            <label class="genePanel" style="margin-left: 80px;" id="dynamic_label">
+                                                
+                                            </label>
+                                            <img src="{{ df }}" alt="df"  class = "matplot8 genePanel" id = "df" width="350" height="350">
+                                        </div>
+                                    </div>
+                                    <script src=static/javascript/zoom8.js></script>
+                                </div>
+                            </div>
+                            <!-- End Image Column -->
+                        </div>  
+                        <!-- End check and image row -->
+                    </div>
+                    <div class="pseudotimePanel" id = "pseudotimePanel" style="display: none;">
+                        <div class="row pseudotimePanel"> 
+                            <!-- Checkboxrow -->
+                            <div class="checkboxcolumn2 pseudotimePanel">
+                                <!-- Default checkbox -->
+                                <div class="row pseudotimePanel">
+                                    <div class="rowin pseudotimePanel">
+                                        <button type='button' id ='retrieve' style = "max-width: 80%;" onclick="display_pseudotime_raw();">Raw <br> Pseudotime</button>
+                                    </div>
+                                    <div class="rowin2 pseudotimePanel">
+                                        <button type='button' id ='retrieve' style = "max-width: 80%;" onclick="display_pseudotime_smoothed();">Smoothed <br> Pseudotime</button>
+                                    </div>
+                                    <label class="pseudotimePanel" id="myprogressBarpseudo">
+                                         
+                                    </label>
+                                </div>
+                                <div class="row pseudotimePanel">
+                                    <div class="innercolumn2 pseudotimePanel">
+                                        <label class = 'pseudotimePanel' id = 'col_label'>Pseudotime Value</label>
+                                    </div>
+                                    <div class="innercolumn pseudotimePanel">
+                                        <img src="{{ colorbar }}" alt="color" class = 'pseudotimePanel' id = "colorbar" width="50" height="200">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Image Column -->
+                            <div class="column pseudotimePanel">
+                                <div class="row_images pseudotimePanel">
+                                    <div class="zoom_outer5 pseudotimePanel">
+                                        <div class="pseudotimePanel" id="zoom5">
+                                            <img src="{{ user_imageax1p }}" alt="User Image11"  class = "matplot5 pseudotimePanel" id = "myimg1p" width="350" height="350">
+                                        </div>
+                                    </div>
+                                    <div class="zoom_outer6 pseudotimePanel">
+                                        <div class="pseudotimePanel" id="zoom6">
+                                            <img src="{{ user_imageax2p }}" alt="User Image22"  class = "matplot6 pseudotimePanel" id = "myimg2p" width="350" height="350">
+                                        </div>
+                                    </div>
+                                    <script src=static/javascript/zoom5.js></script>
+                                    <script src=static/javascript/zoom6.js></script>
+                                </div>
+                                <div class="row2 pseudotimePanel"> 
+                                    <div class="column5 pseudotimePanel"> 
+                                        <label for="membership_p">Change Experiment:</label>
+                                    </div>
+                                    <div class="column5 pseudotimePanel"> 
+                                        <select name="membership_p" id="membership_p" onchange="reload_experiment_pseudotime(this)">
+                                            <option value="0 hr Avrrpt" selected>Mock AvrRpt2</option>
+                                            <option value="4 hr Avrrpt">4 hr AvrRpt2</option>
+                                            <option value="6 hr Avrrpt">6 hr AvrRpt2</option>
+                                            <option value="9 hr Avrrpt">9 hr AvrRpt2</option>
+                                            <option value="24 hr Avrrpt">24 hr AvrRpt2</option>
+                                            <option value="24 hr Kt56">24 hr DC3000</option>
+                                            <option value="Multiome">Multiome</option>
+                                        </select>
+                                    </div>
+                                    <div class="column5 pseudotimePanel"> 
+                                        <label for="membership_second_p">Change Experiment:</label>
+                                    </div>
+                                    <div class="column5 pseudotimePanel"> 
+                                        <select name="membership_second_p" id="membership_second_p" onchange="reload_experiment_pseudotime2(this)">
+                                            <option value="0 hr Avrrpt">Mock AvrRpt2</option>
+                                            <option value="4 hr Avrrpt">4 hr AvrRpt2</option>
+                                            <option value="6 hr Avrrpt">6 hr AvrRpt2</option>
+                                            <option value="9 hr Avrrpt">9 hr AvrRpt2</option>
+                                            <option value="24 hr Avrrpt">24 hr AvrRpt2</option>
+                                            <option value="24 hr Kt56">24 hr DC3000</option>
+                                            <option value="Multiome" selected>Multiome</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div> 
+                    <!-- End check and image row -->
+                    <div class="transcriptPanel" id = "transcriptPanel" style="display: none;">
+                        <div class="row transcriptPanel"> 
+                            <div class="columnt transcriptPanel">
+                                <label class = "transcriptlabel transcriptPanel">Search Transcript:</label>
+                                <select class="js-example-basic-multiple" id = "first_select" data-maximum-selection-length="3" name="states[]" multiple="multiple">
+                                    {% for opt in myOptions %}
+                                        <option value={{ opt }} 
+                                        {% if myValue==opt %} 
+                                            selected="true"
+                                        {% endif %}>{{ opt }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                <div class="form-check form-check-inline transcriptPanel" style="white-space:nowrap">
+                                    <input class="form-check-input transcriptPanel" name = "in" type="checkbox" id="inlineCheckbox0t" value="1">
+                                    <label class="form-check-label transcriptPanel" for="inlineCheckbox0t">Show Bacteria</label>
+                                </div>
+                                <button type='button' class = "display_button" id ='display_transcripts' style = 'z-index: 999;', onclick="display_transcript();">Display</button>
+                                <label class="transcriptPanel" id="myprogressBartranscript">
+                                         
+                                </label>
+                                <img src="{{ second_image }}" alt="zoom" id = "legend" width="200" height="200">
+                            </div>
+                            <!-- Image Column -->
+                            <div class="columnt2 transcriptPanel">
+                                <div class="row_images transcriptPanel">
+                                    <div class="zoom_outer transcriptPanel">
+                                        <div class="transcriptPanel" id="zoom">
+                                            <img src="{{ user_imageax1 }}" alt="User Image1"  class = "matplot transcriptPanel" id = "myimg_transcript1" width="350" height="350">
+                                        </div>
+                                        <script src=static/javascript/zoom.js defer></script>
+                                    </div>
+                                    <div class="zoom_outer2 transcriptPanel">
+                                        <div class="transcriptPanel" id="zoom2">
+                                            <img src="{{ user_imageax2 }}" alt="User Image2"  class = "matplot2 transcriptPanel" id = "myimg_transcript2" width="350" height="350">
+                                        </div>
+                                        <script src=static/javascript/zoom2.js></script>
+                                    </div>
+                                </div>
+                                
+                                <div class="row2 transcriptPanel"> 
+                                    <div class="column5 transcriptPanel"> 
+                                        <label for="membershipt">Change Experiment:</label>
+                                    </div>
+                                    <div class="column5 transcriptPanel"> 
+                                        <select name="membershipt" id="membershipt" onchange="reload_experiment_transcript(this)">
+                                            <option value="0 hr Avrrpt" selected>Mock AvrRpt2</option>
+                                            <option value="4 hr Avrrpt">4 hr AvrRpt2</option>
+                                            <option value="6 hr Avrrpt">6 hr AvrRpt2</option>
+                                            <option value="9 hr Avrrpt">9 hr AvrRpt2</option>
+                                            <option value="24 hr Avrrpt">24 hr AvrRpt2</option>
+                                            <option value="24 hr Kt56">24 hr DC3000</option>
+                                        </select>
+                                    </div>
+                                    <div class="column5 transcriptPanel"> 
+                                        <label for="membership_secondt">Change Experiment:</label>
+                                    </div>
+                                    <div class="column5 transcriptPanel"> 
+                                        <select name="membership_secondt" id="membership_secondt" onchange="reload_experiment_transcript2(this)">
+                                            <option value="0 hr Avrrpt">0 hr AvrRpt2</option>
+                                            <option value="4 hr Avrrpt">4 hr AvrRpt2</option>
+                                            <option value="6 hr Avrrpt">6 hr AvrRpt2</option>
+                                            <option value="9 hr Avrrpt">9 hr AvrRpt2</option>
+                                            <option value="24 hr Avrrpt">24 hr AvrRpt2</option>
+                                            <option value="24 hr Kt56">24 hr DC3000</option>
+                                            <option value="Multiome" selected>Multiome</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Image Column -->
+                        </div>
+                    </div>
+                    <!-- Clusterpanel -->
+                    <div class="clusterPanel" id = "clusterPanel">
+                        <div class="row clusterPanel"> 
+                            <!-- Checkboxrow -->
+                            <div class="checkboxcolumn clusterPanel">
+                                <!-- Default checkbox -->
+                                <div class="row clusterPanel">
+                                </div class="form-check form-check-inline clusterPanel">
+                                    <input type="checkbox" onClick="toggle(this)" class ="form-check-input clusterPanel" checked>
+                                    <label class="form-check-label clusterPanel" name = "selectfont">Select All</label>
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox0" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox0">Cluster 0</label>
+                                </div>
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox1" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox1">Cluster 1</label>
+                                </div>
+                                
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox2" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox2">Cluster 2</label>
+                                </div>
+                                
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox3" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox3">Cluster 3</label>
+                                </div>
+
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox4" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox4">Cluster 4</label>
+                                </div>
+                                
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox5" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox5">Cluster 5</label>
+                                </div>
+
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox6" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox6">Cluster 6</label>
+                                </div>
+                                
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox7" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox7">Cluster 7</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" name = "in" type="checkbox" id="inlineCheckbox8" value="1" checked>
+                                    <label class="form-check-label" for="inlineCheckbox8">Cluster 8</label>
+                                </div>
+                                
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox9" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox9">Cluster 9</label>
+                                </div>
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox10" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox10">Cluster 10</label>
+                                </div>
+                                
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox11" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox11">Cluster 11</label>
+                                </div>
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox12" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox12">Cluster 12</label>
+                                </div>
+                                
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox13" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox13">Cluster 13</label>
+                                </div>
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox14" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox14">Cluster 14</label>
+                                </div>
+                                
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox15" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox15">Cluster 15</label>
+                                </div>
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox16" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox16">Cluster 16</label>
+                                </div>
+                                <div class="form-check form-check-inline clusterPanel">
+                                    <input class="form-check-input clusterPanel" name = "in" type="checkbox" id="inlineCheckbox17" value="1" checked>
+                                    <label class="form-check-label clusterPanel" for="inlineCheckbox17">Cluster 17</label>
+                                </div class="form-check form-check-inline clusterPanel">
+                                <button type='button' id ='retrieve', onclick="clusterfind();">Show Clusters</button>                                
+                                <label class="clusterPanel" id="myprogressBarcluster">
+                                         
+                                </label>
+                                </div>
+
+                            <!-- End Checkboxrow -->
+                            <!-- Image Column -->
+                            <div class="column clusterPanel">
+                                <div class="row_images clusterPanel">
+                                    <div class="zoom_outer3 clusterPanel">
+                                        <div class="clusterPanel" id="zoom3">
+                                            <img src="{{ user_imageax1 }}" alt="User Image11"  class = "matplot3 clusterPanel" id = "myimg1" width="350" height="350">
+                                        </div>
+                                    </div>
+                                    <div class="zoom_outer4 clusterPanel">
+                                        <div class="clusterPanel" id="zoom4">
+                                            <img src="{{ user_imageax2 }}" alt="User Image22"  class = "matplot4 clusterPanel" id = "myimg2" width="350" height="350">
+                                        </div>
+                                    </div>
+                                    <script src=static/javascript/zoom3.js></script>
+                                    <script src=static/javascript/zoom4.js></script>
+                                </div>
+                                <div class="row2 clusterPanel"> 
+                                    <div class="column5 clusterPanel"> 
+                                        <label for="membership">Change Experiment:</label>
+                                    </div>
+                                    <div class="column5 clusterPanel"> 
+                                        <select name="membership" id="membership" onchange="reload_experiment(this)">
+                                            <option value="0 hr Avrrpt" selected>Mock AvrRpt2</option>
+                                            <option value="4 hr Avrrpt">4 hr AvrRpt2</option>
+                                            <option value="6 hr Avrrpt">6 hr AvrRpt2</option>
+                                            <option value="9 hr Avrrpt">9 hr AvrRpt2</option>
+                                            <option value="24 hr Avrrpt">24 hr AvrRpt2</option>
+                                            <option value="24 hr Kt56">24 hr DC3000</option>
+                                            <option value="Multiome">Multiome</option>
+                                        </select>
+                                    </div>
+                                    <div class="column5 clusterPanel"> 
+                                        <label for="membership_second">Change Experiment:</label>
+                                    </div>
+                                    <div class="column5 clusterPanel"> 
+                                        <select name="membership_second" id="membership_second" onchange="reload_experiment2(this)">
+                                            <option value="0 hr Avrrpt">Mock AvrRpt2</option>
+                                            <option value="4 hr Avrrpt">4 hr AvrRpt2</option>
+                                            <option value="6 hr Avrrpt">6 hr AvrRpt2</option>
+                                            <option value="9 hr Avrrpt">9 hr AvrRpt2</option>
+                                            <option value="24 hr Avrrpt">24 hr AvrRpt2</option>
+                                            <option value="24 hr Kt56">24 hr DC3000</option>
+                                            <option value="Multiome" selected>Multiome</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Image Column -->
+                        </div>  
+                        <!-- End check and image row -->
+                    </div>
+                    <!-- End cluster panel -->
+                    <!-- Imputed Panel-->
+                    <div class="imputedPanel" id = "imputedPanel" style="display: none;">
+                        <div class="row imputedPanel"> 
+                            <div class="columnt imputedPanel">
+                                <label class = "imputedlabel imputedPanel">Search All Imputed Genes:</label>
+                                <select class="js-example-basic-multiple" id = "first_select2" name="states[]">
+                                    {% for opt in imputed_names %}
+                                        <option value={{ opt }} 
+                                        {% if myValue==opt %} 
+                                            selected="true"
+                                        {% endif %}>{{ opt }}
+                                        </option>
+                                    {% endfor %}
+                                    <option value='alex' selected = "true">--------------</option>
+                                </select>
+                                <script>
+                                    $(document).ready(function() {
+                                      $('#first_select2').select2({
+                                        minimumInputLength: 3
+                                      });
+                                    });
+                                </script>
+                                <button type='button' class = "display_button imputedPanel" id ='display_imputed' style = 'z-index: 999;', onclick="display_imputed();">Display</button>
+                                <label class="imputedPanel" id="myprogressBarimputed" style = 'margin-left: 35%;'>
+                                         
+                                </label>
+                            </div>
+                            <!-- Image Column -->
+                            <div class="columnt2 imputedPanel">
+                                <div class="row_images imputedPanel">
+                                    <div class="zoom_outer9 imputedPanel">
+                                        <div class="imputedPanel" id="zoom9">
+                                            <label class="imputedPanel" style="margin-left: 35%">
+                                                RNA Expression
+                                            </label>
+                                            <img src="{{ user_imageax1_imp }}" alt="User Image1"  class = "matplot9 imputedPanel" id = "myimg_imputed1" width="350" height="350">
+                                        </div>
+                                        <script src=static/javascript/zoom9.js></script>
+                                    </div>
+                                    <div class="zoom_outer10 imputedPanel">
+                                        <div class="imputedPanel" id="zoom10">
+                                            <label class="imputedPanel" style="margin-left: 35%;" id="dynamic_label">
+                                                ATAC Fragments
+                                            </label>
+                                            <img src="{{ user_imageax2_imp }}" alt="User Image2"  class = "matplot10 imputedPanel" id = "myimg_imputed2" width="350" height="350">
+                                        </div>
+                                        <script src=static/javascript/zoom10.js></script>
+                                    </div>
+                                </div>
+                                
+                                <div class="row25 imputedPanel"> 
+                                    <div class="column5 imputedPanel"> 
+                                        <label for="membershipt">Change Experiment:</label>
+                                    </div>
+                                    <div class="column5 imputedPanel"> 
+                                        <select name="membershipimp" id="membershipimp" onchange="reload_experiment_imputed(this)">
+                                            <option value="0 hr Avrrpt" selected>Mock AvrRpt2</option>
+                                            <option value="4 hr Avrrpt">4 hr AvrRpt2</option>
+                                            <option value="6 hr Avrrpt">6 hr AvrRpt2</option>
+                                            <option value="9 hr Avrrpt">9 hr AvrRpt2</option>
+                                            <option value="24 hr Avrrpt">24 hr AvrRpt2</option>
+                                            <option value="Multiome">Multiome</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Image Column -->
+                        </div>
+                    </div>
+                    <!-- End Imputed Panel-->
+                    <!-- MOtif Panel-->
+                    <div class="motifPanel" id = "motifPanel" style="display: none;">
+                        <div class="row motifPanel"> 
+                            <div class="columnt motifPanel">
+                                <label class = "imputedlabel motifPanel">Search All Motifs:</label>
+                                <select class="js-example-basic-multiple" id = "first_select3" name="states[]">
+                                    
+                                    {% for opt in motif_names %}
+                                        <option value={{ opt }} 
+                                        {% if myValue==opt %} 
+                                            selected="true"
+                                        {% endif %}>{{ opt }}
+                                        </option>
+                                    {% endfor %}
+                                    <option value='alex' selected = "true">--------------</option>
+                                </select>
+                                <!-- <script>
+                                    $(document).ready(function() {
+                                      $('#first_select3').select2({
+                                        minimumInputLength: 3
+                                      });
+                                    });
+                                </script> -->
+                                <button type='button' class = "display_button imputedPanel" id ='display_imputed' style = 'z-index: 999;', onclick="display_motif();">Display</button>
+                                <label class="motifPanel" id="myprogressBarmotif" style = 'margin-left: 35%;'>
+                                         
+                                </label>
+                            </div>
+                            <!-- Image Column -->
+                            <div class="columnt2 motifPanel">
+                                <div class="row_images motifPanel">
+                                    <div class="zoom_outer11 motifPanel">
+                                        <div class="motifPanel" id="zoom11">
+                                            <label class="motifPanel" style="margin-left: 35%">
+                                                Motif Enrichment Score
+                                            </label>
+                                            <img src="{{ user_imageax1_motif }}" alt="User Image1"  class = "matplot11 motifPanel" id = "myimg_motif1" width="350" height="350">
+                                        </div>
+                                        <script src=static/javascript/zoom11.js defer></script>
+                                    </div>
+                                </div>
+                                
+                                <div class="row25 motifPanel"> 
+                                    <div class="column5 motifPanel"> 
+                                        <label for="membershipt">Change Experiment:</label>
+                                    </div>
+                                    <div class="column5 motifPanel"> 
+                                        <select name="membershipt" id="membershipt" onchange="reload_experiment_motif(this)">
+                                            <option value="0 hr Avrrpt" selected>Mock AvrRpt2</option>
+                                            <option value="4 hr Avrrpt">4 hr AvrRpt2</option>
+                                            <option value="6 hr Avrrpt">6 hr AvrRpt2</option>
+                                            <option value="9 hr Avrrpt">9 hr AvrRpt2</option>
+                                            <option value="24 hr Avrrpt">24 hr AvrRpt2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Image Column -->
+                        </div>
+                    </div>
+                    <!-- End Motif Panel-->
+                </div>
+            </div>
+        </div>
+    </body>
+    
+
+</html>

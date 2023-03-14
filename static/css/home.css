@@ -1,0 +1,708 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  li {
+    margin-right: 10px;
+  }
+  
+  .bg-light {
+    background-color: azure;
+  }
+
+  section {
+    padding: 2% 0;
+  }
+  /* Footer CSS */
+  
+  footer {
+    padding: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    color: white;
+    flex-wrap: wrap;
+  }
+
+  #legend {
+    margin-top: 16%;
+    margin-left: -20px;
+  }
+  
+  /* Footer CSS ends */
+  
+  /* Carousel Item CSS width & Height */
+  
+  .carousel-item {
+    width: 100%;
+    height: 700px;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .title {
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 80%;
+    margin-top: 5%;
+}
+
+.column9 {
+  float: left;
+  width: 30%;
+  margin-top: 5%;
+}
+
+.columnt {
+  width: 10%;
+  float: left;
+  margin-top: 10%;
+}
+
+.innercolumn {
+  float: left;
+  width: 50%;
+}
+.innercolumn2 {
+  float: left;
+  width: 50%;
+}
+.columnt2 {
+  width: 80%;
+  float: left;
+  margin-top: 5%;
+}
+.transcriptlabel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Helvetica', sans-serif;
+  color: #444444;
+  font-size: 15pt;
+  font-weight: bold;
+  padding-left: 60px;
+}
+
+.imputedlabel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Helvetica', sans-serif;
+  color: #444444;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-left: 30px;
+}
+
+.display_button {
+  margin-left: 45px;
+  border-color: #111;
+  margin-top: 5px;
+}
+
+#dfbox {
+  margin-bottom: 15px;
+  margin-left: 8%;
+}
+
+#first_dropdown {
+  width: 70%;
+  margin-top: 10%;
+  margin-left: 15%;
+}
+
+#second_dropdown {
+  width: 70%;
+  margin-top: 16%;
+  margin-left: 15%;
+}
+
+#display_diff {
+  margin-top: 16%;
+  margin-left: 25%; 
+}
+
+.js-example-basic-multiple {
+  width: 150px;
+}
+.js-example-basic-multiple:focus {
+  min-width: 150px;
+  width: auto;
+}
+
+.checkboxcolumn {
+  float: left;
+  width: 13%;
+  padding: 10px;
+  background-color: azure;
+}
+
+.checkboxcolumn2 {
+  float: left;
+  width: 13%;
+  padding: 10px;
+  height: fit-content;
+  margin-top: 5%;
+  background-color: floralwhite;
+}
+
+.column3 {
+  float: left;
+  width: 5%;
+}
+
+.column4 {
+  float: left;
+  width: 95%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.column5 {
+  float: left;
+  width: 3%;
+  padding: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.header{
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Helvetica', sans-serif;
+    color: #444444;
+    font-size: 27pt;
+    font-weight: bold;
+}
+
+.column img {
+    margin-top: 12px;
+}
+
+/* Clear floats after the columns */
+.rowin2 {
+  height: 10%;
+  width: 70%;
+  margin-top: 20px;
+  padding: 5px;
+  margin-left: 25%;
+}
+.rowin2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.rowin {
+  height: 10%;
+  width: 70%;
+  padding: 5px;
+  margin-left: 25%;
+}
+.rowin:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.row2:after {
+    content: "";
+    text-align: left;
+}
+
+.row25:after {
+  content: "";
+  text-align: left;
+}
+  
+  /* More informatin Section */
+  
+  body {
+    background-color: rgb(253, 242, 225);
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Dropdown Button */
+    .dropbtn {
+        background-color: #04aaa7;
+        color: white;
+        padding: 5px;
+        font-size: 13px;
+        border: none;
+    }
+
+    .form-check-label[name=selectfont]
+    {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    /* The container <div> - needed to position the dropdown content */
+    .column5 label[for=membershipt]
+    {
+        margin-left: 130px;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    .column5 label[for=membershipimp]
+    {
+        margin-left: 130px;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    .column5 label[for=membershipmot]
+    {
+        margin-left: 130px;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    .column5 label[for=membership_secondt]
+    {
+        margin-left: 475px;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+
+    .column5 select[id=membership_secondt]{
+        margin-left: 610px;
+        z-index: 999;
+        
+    }
+
+    .column5 select[id=membershipt]{
+        margin-left: 265px;
+        z-index: 999;
+        
+    }
+    .column5 select[id=membershipimp]{
+      margin-left: 265px;
+      z-index: 999;    
+    }
+    .column5 select[id=membershipmot]{
+      margin-left: 265px;
+      z-index: 999;
+      
+  }
+    .column5 label[for=membership]
+    {
+        margin-left: 80px;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+
+    .column5 label[for=membership_second]
+    {
+        margin-left: 420px;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+
+    .column5 select[id=membership_second]{
+        margin-left: 550px;
+        z-index: 999;
+        
+    }
+
+    .column5 select[id=membership]{
+        margin-left: 210px;
+        z-index: 999;
+        
+    }
+
+    .column5 label[for=membership_p]
+    {
+        margin-left: 80px;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+
+    .column5 label[for=membership_second_p]
+    {
+        margin-left: 420px;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+
+    .column5 select[id=membership_second_p]{
+        margin-left: 550px;
+        z-index: 999;
+        
+    }
+
+    .column5 select[id=membership_p]{
+        margin-left: 210px;
+        z-index: 999;
+        
+    }
+
+    
+
+
+  
+  .sidebar {
+    height: 150%;
+    width: 85px;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    transition: 0.5s;
+    overflow-x: hidden;
+    padding-top: 60px;
+    white-space: nowrap;
+    position: relative;
+    z-index: 999
+  }
+  .select2-selection__choice{
+    background-color: white !important;
+    z-index: 0;
+    position: relative;
+}
+
+.select2-selection__choice__remove{
+    border: none!important;
+    border-radius: 0!important;
+    padding: 0 2px!important;
+    z-index: 0;
+    position: relative;
+}
+
+.select2-selection__choice__remove:hover{
+    background-color: transparent!important;
+    color: #ef5454 !important;
+    z-index: 0;
+    position: relative;
+}
+  .select2-selection
+{
+   background-color: azure !important;
+   z-index: 0;
+   position: relative;
+}
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  main .sidebar {
+    position: relative;
+    z-index: -1;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .material-icons,
+  .icon-text {
+    vertical-align: middle;
+  }
+  
+  .material-icons {
+    padding-bottom: 3px;
+    margin-right: 30px;
+  }
+
+  #main {
+    padding: 16px;
+    margin-left: 85px;
+    transition: margin-left 0.5s;
+  }
+
+  .row_images:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .zoom_outer {
+    margin-left: 10%;
+    width: 350px;
+    height: 350px;
+    background-color: floralwhite;
+    overflow-x: hidden;
+    float: left;
+  }
+  #zoom {
+    width: 100%;
+    height: 100%;
+    transform-origin: 0px 0px;
+    transform: scale(1) translate(0px, 0px);
+    cursor: grab;
+    background-color: floralwhite;
+  }
+  div#zoom > .matplot {
+    width: 100%;
+    height: auto;
+  }
+
+  .zoom_outer9 {
+    margin-left: 10%;
+    width: 350px;
+    height: 350px;
+    background-color: floralwhite;
+    overflow-x: hidden;
+    float: left;
+  }
+  #zoom9 {
+    width: 100%;
+    height: 100%;
+    transform-origin: 0px 0px;
+    transform: scale(1) translate(0px, 0px);
+    cursor: grab;
+    background-color: floralwhite;
+  }
+  div#zoom9 > .matplot9 {
+    width: 100%;
+    height: auto;
+  }
+  .zoom_outer11 {
+    margin-left: 10%;
+    width: 350px;
+    height: 350px;
+    background-color: floralwhite;
+    overflow-x: hidden;
+    float: left;
+  }
+  #zoom11 {
+    width: 100%;
+    height: 100%;
+    transform-origin: 0px 0px;
+    transform: scale(1) translate(0px, 0px);
+    cursor: grab;
+    background-color: floralwhite;
+  }
+  div#zoom11 > .matplot11 {
+    width: 100%;
+    height: auto;
+  }
+
+  .zoom_outer3 {
+    margin-left: 5%;
+    width: 350px;
+    height: 350px;
+    background-color: floralwhite;
+    float: left;
+    overflow-x: hidden;
+  }
+  #zoom3 {
+    width: 100%;
+    height: 100%;
+    transform-origin: 0px 0px;
+    transform: scale(1) translate(0px, 0px);
+    cursor: grab;
+    background-color: floralwhite;
+  }
+  .zoom_outer7 {
+    margin-left: 5%;
+    width: 350px;
+    height: 350px;
+    background-color: floralwhite;
+    float: left;
+    overflow-x: hidden;
+  }
+  #zoom7 {
+    width: 100%;
+    height: 100%;
+    transform-origin: 0px 0px;
+    transform: scale(1) translate(0px, 0px);
+    cursor: grab;
+    background-color: floralwhite;
+  }
+
+  .zoom_outer4 {
+    margin-left: 5%;
+    width: 350px;
+    height: 350px;
+    background-color: floralwhite;
+    float: left;
+    overflow-x: hidden;
+  }
+  #zoom4 {
+    width: 100%;
+    height: 100%;
+    transform-origin: 0px 0px;
+    transform: scale(1) translate(0px, 0px);
+    cursor: grab;
+    background-color: floralwhite;
+  }
+  div#zoom4 > .matplot4{
+    width: 100%;
+    height: auto;
+  }
+  div#zoom3 > .matplot3{
+    width: 100%;
+    height: auto;
+  }
+  #colorbar {
+    margin-top: 15px;
+    margin-left: -30px;
+  }
+  #col_label {
+    margin-top: 100px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    transform: rotate(270deg);
+    margin-left: -40px;
+  }
+  .zoom_outer5 {
+    margin-left: 10%;
+    width: 350px;
+    height: 350px;
+    background-color: floralwhite;
+    overflow-x: hidden;
+    float: left;
+  }
+  #zoom5 {
+    width: 100%;
+    height: 100%;
+    transform-origin: 0px 0px;
+    transform: scale(1) translate(0px, 0px);
+    cursor: grab;
+    background-color: floralwhite;
+  }
+  div#zoom5 > .matplot5 {
+    width: 100%;
+    height: auto;
+  }
+
+  .zoom_outer6 {
+    margin-left: 5%;
+    width: 350px;
+    height: 350px;
+    background-color: floralwhite;
+    overflow-x: hidden;
+    float: left
+  }
+  #zoom6 {
+    width: 100%;
+    height: 100%;
+    transform-origin: 0px 0px;
+    transform: scale(1) translate(0px, 0px);
+    cursor: grab;
+    background-color: floralwhite;
+  }
+  div#zoom6 > .matplot6 {
+    width: 100%;
+    height: auto;
+  }
+
+  .zoom_outer8 {
+    margin-left: 5%;
+    width: 425px;
+    height: 370px;
+    background-color: white;
+    overflow-x: hidden;
+    float: left
+  }
+  #zoom8 {
+    width: 100%;
+    height: 100%;
+    transform-origin: 0px 0px;
+    transform: scale(1) translate(0px, 0px);
+    cursor: grab;
+    background-color: white;
+  }
+  div#zoom8 > .matplot8 {
+    width: 100%;
+    height: auto;
+  }
+  #myprogressBar {
+    margin-top: 5%;
+    margin-left: 23%;
+  }
+  #myprogressBartranscript {
+    margin-left: 40%;
+  }
+  #myprogressBarpseudo {
+    margin-left: 26%;
+  }
+  #myprogressBarcluster {
+    margin-left: 10%;
+  }
+  .zoom_outer2 {
+    margin-left: 5%;
+    width: 350px;
+    height: 350px;
+    background-color: floralwhite;
+    overflow-x: hidden;
+    float: left
+  }
+  #zoom2 {
+    width: 100%;
+    height: 100%;
+    transform-origin: 0px 0px;
+    transform: scale(1) translate(0px, 0px);
+    cursor: grab;
+    background-color: floralwhite;
+  }
+  div#zoom2 > .matplot2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .zoom_outer10 {
+    margin-left: 5%;
+    width: 350px;
+    height: 350px;
+    background-color: floralwhite;
+    overflow-x: hidden;
+    float: left
+  }
+  #zoom10 {
+    width: 100%;
+    height: 100%;
+    transform-origin: 0px 0px;
+    transform: scale(1) translate(0px, 0px);
+    cursor: grab;
+    background-color: floralwhite;
+  }
+  div#zoom10 > .matplot10 {
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidebar {
+      padding-top: 15px;
+    }
+    .sidebar a {
+      font-size: 18px;
+    }
+  }
+  
