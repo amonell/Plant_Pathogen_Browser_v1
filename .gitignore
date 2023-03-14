@@ -1,5 +1,7 @@
 # Ignore the scanpy_files folder
-scanpy_files/
+scanpy_objects/
+
+static/
 
 # Ignore all files with the .log extension
 *.log
